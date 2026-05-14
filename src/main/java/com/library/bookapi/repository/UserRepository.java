@@ -1,0 +1,9 @@
+package com.library.bookapi.repository;
+
+import com.library.bookapi.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByUsername(String username);
+}
