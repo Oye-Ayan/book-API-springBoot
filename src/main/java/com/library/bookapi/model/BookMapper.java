@@ -1,8 +1,8 @@
-package com.library.bookapi.dto;
+package com.library.bookapi.model;
 
-import com.library.bookapi.dto.request.BookRequest;
-import com.library.bookapi.dto.response.BookResponse;
-import com.library.bookapi.model.Book;
+import com.library.bookapi.model.request.BookRequest;
+import com.library.bookapi.model.response.BookResponse;
+import com.library.bookapi.domain.Book;
 
 public class BookMapper {
 

@@ -1,4 +1,4 @@
-package com.library.bookapi.dto.response;
+package com.library.bookapi.model.response;
 import lombok.Data;
 
 @Data

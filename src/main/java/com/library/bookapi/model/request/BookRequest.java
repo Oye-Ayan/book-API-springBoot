@@ -1,4 +1,4 @@
-package com.library.bookapi.dto.request;
+package com.library.bookapi.model.request;
 
 import jakarta.validation.constraints.*;
 import lombok.Data;

@@ -1,6 +1,8 @@
 package com.library.bookapi.service;
 
-import com.library.bookapi.model.User;
+import com.library.bookapi.model.request.RegisterRequest;
+import com.library.bookapi.domain.Role;
+import com.library.bookapi.domain.User;
 import com.library.bookapi.repository.UserRepository;
 import com.library.bookapi.security.JwtUtil;
 import lombok.RequiredArgsConstructor;
@@ -15,14 +17,15 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
 
-    public String register(String username, String password) {
-        if (userRepo.findByUsername(username).isPresent())
+    public String register(RegisterRequest req) {
+        if (userRepo.findByUsername(req.getUsername()).isPresent())
             throw new RuntimeException("Username already taken");
         User user = new User();
-        user.setUsername(username);
-        user.setPassword(passwordEncoder.encode(password)); // bcrypt!
+        user.setUsername(req.getUsername());
+        user.setPassword(passwordEncoder.encode(req.getPassword())); // bcrypt!
+        user.setRole(req.getRole() != null ? req.getRole() : Role.ROLE_USER); // default is ROLE_USER
         userRepo.save(user);
-        return jwtUtil.generateToken(username);
+        return jwtUtil.generateToken(req.getUsername());
     }
 
     public String login(String username, String password) {

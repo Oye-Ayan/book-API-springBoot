@@ -1,9 +1,9 @@
 package com.library.bookapi.service;
 
-import com.library.bookapi.dto.BookMapper;
-import com.library.bookapi.dto.request.BookRequest;
-import com.library.bookapi.dto.response.BookResponse;
-import com.library.bookapi.model.Book;
+import com.library.bookapi.model.BookMapper;
+import com.library.bookapi.model.request.BookRequest;
+import com.library.bookapi.model.response.BookResponse;
+import com.library.bookapi.domain.Book;
 import com.library.bookapi.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

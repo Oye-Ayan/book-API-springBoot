@@ -1,4 +1,4 @@
-package com.library.bookapi.model;
+package com.library.bookapi.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;

@@ -1,6 +1,6 @@
 package com.library.bookapi.repository;
 
-import com.library.bookapi.model.User;
+import com.library.bookapi.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
